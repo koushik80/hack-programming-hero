@@ -38,10 +38,13 @@ body {
 .nav .avatar img {
   width: 30px;
   height: 30px;
+  border-radius: 50%;
 }
 
 .avatar p {
   margin-left: 10px;
-  font-size: 14px;
-  color: var(--white);
+  font-size: 15px;
+  color: rgb(28, 242, 242);
+  font-weight: 800;
+
 }
