@@ -48,3 +48,35 @@ body {
   font-weight: 800;
 
 }
+
+/* Main body with grid start */
+.main {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  grid-gap: 20px;
+  padding: 30px;
+}
+
+.flex {
+  display: flex;
+}
+
+.checkbox {
+  width: 40px;
+}
+
+.milestoneDetails img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 7px;
+  -webkit-transition: opacity 0.8s linear;
+  -moz-transition: opacity 0.8s linear;
+  transition: opacity 0.8s linear;
+}
+
+.title,
+.details {
+  margin: 10px auto;
+  padding: 5px 10px;
+}
