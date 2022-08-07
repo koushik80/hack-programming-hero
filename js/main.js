@@ -1,7 +1,6 @@
 const milestonesData = JSON.parse(data).data;
 
 // load course milestones data
-
 function loadMilestones() {
     const milestones = document.querySelector('.milestones');
 
@@ -10,7 +9,7 @@ function loadMilestones() {
         return `<div class="milestone border-b" id="${milestone._id}">
             <div class="flex">
               <div class="checkbox"><input type="checkbox"
-              onclick="markMilestone(this, ${milestone._id})"/></div>
+              onclick="markMilestone(this, ${milestone._id})" /></div>
               <div onclick="openMilestone(this, ${milestone._id})">
                 <p>
                   ${milestone.name}
@@ -19,17 +18,17 @@ function loadMilestones() {
               </div>
             </div>
             <div class="hidden_panel">
-              ${milestone.modules.map(function (module) {
+              ${milestone.modules
+                .map(function (module) {
                   return `<div class="module border-b">
                   <p>${module.name}</p>
               </div>`;
               })
-            .join("")}
+              .join("")}
             </div>
           </div>`;
     })
-        .join("")}`;
-
+    .join("")}`;
 }
 function openMilestone(milestoneElement, id) {
     const currentPanel = milestoneElement.parentNode.nextElementSibling;
@@ -52,7 +51,8 @@ function openMilestone(milestoneElement, id) {
     currentPanel.classList.toggle("show");
 
     showMilestone(id);
-    }
+
+}
 
 function showMilestone(id) {
     const milestoneImage = document.querySelector(".milestoneImage");
@@ -73,7 +73,7 @@ milestoneImage.onload = function () {
     this.style.opacity = "1";
 };
 
-function markMilestone() {
+function markMilestone(checkbox, id) {
     const doneList = document.querySelector(".doneList");
     const milestonesList = document.querySelector(".milestones");
     const item = document.getElementById(id);
@@ -84,13 +84,9 @@ function markMilestone() {
         doneList.appendChild(item);
     } else {
         // back to main list
-        milestonenessList.appendChild(item);
+        milestonenesList.appendChild(item);
         doneList.removeChild(item);
-
-        // task - do the sorting
-        //reload list
     }
-
 }
 
 loadMilestones();
