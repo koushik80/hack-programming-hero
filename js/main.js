@@ -84,9 +84,11 @@ function markMilestone(checkbox, id) {
         doneList.appendChild(item);
     } else {
         // back to main list
-        milestonenesList.appendChild(item);
+        milestonesList.appendChild(item);
         doneList.removeChild(item);
     }
+
 }
+
 
 loadMilestones();
